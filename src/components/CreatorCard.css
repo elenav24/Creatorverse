@@ -1,0 +1,48 @@
+.creator-card {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 20px;
+  background: #fff;
+  width: 350px;
+  height: 500px;
+}
+
+.creator-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+    0 8px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  transition: all 0.2s ease-in-out;
+}
+
+.creator-name {
+  font-size: 1.5em;
+  margin: 15px 0 10px 0;
+}
+
+.creator-bio {
+  font-size: 1em;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.creator-image-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.creator-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-position: top;
+  object-fit: fill;
+}
+
+.creator-link {
+    margin-top: auto;
+    text-align: left;
+}
