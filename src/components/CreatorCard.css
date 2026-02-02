@@ -5,8 +5,9 @@
   align-items: flex-start;
   border-radius: 20px;
   background: #fff;
-  width: 350px;
-  height: 500px;
+  width: 340px;
+  height: 400px;
+  cursor: pointer;
 }
 
 .creator-card:hover {
@@ -18,7 +19,7 @@
 
 .creator-name {
   font-size: 1.5em;
-  margin: 15px 0 10px 0;
+  margin: 10px 0 6px 0;
 }
 
 .creator-bio {
@@ -29,7 +30,7 @@
 
 .creator-image-container {
   width: 100%;
-  height: 220px;
+  height: 200px;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -39,7 +40,8 @@
   height: auto;
   border-radius: 8px;
   object-position: top;
-  object-fit: fill;
+  object-fit: cover;
+  max-height: 200px;
 }
 
 .creator-link {

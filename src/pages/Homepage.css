@@ -3,5 +3,35 @@
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-  padding: 10px;
+  padding: 25px 100px;
+}
+
+.view-all-creators-btn {
+  font-family: inherit;
+}
+
+.btn {
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  padding: 12px 32px;
+  font-size: 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #f253e5;;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
 }

@@ -1,4 +1,5 @@
 import CreatorCard from '../components/CreatorCard';
+import { useNavigate } from 'react-router-dom';
 import type { Creator } from '../utils/types';
 import './Homepage.css';
 
@@ -11,11 +12,20 @@ function checkCreators(creators: Creator[] | null | undefined): boolean {
 }
 
 export default function Homepage({ creators }: HomepageProps) {
+  const limitedCreators = creators?.slice(0, 5) ?? [];
+  const navigate = useNavigate();
   return (
     <div>
-      <h1>Creatorverse</h1>
+      <div className="buttons-container">
+        <button className="btn view-all-creators" onClick={() => navigate('/creators')}>
+          View All Creators
+        </button>
+        <button className="btn add-creator" onClick={() => navigate('/add-creator')}>
+          Add a Creator
+        </button>
+      </div>
       <div className="creator-cards-container">
-        {checkCreators(creators) ? (creators.map((creator: Creator) => (
+        {checkCreators(limitedCreators) ? (limitedCreators.map((creator: Creator) => (
           <CreatorCard
             key={creator.id}
             name={creator.name}

@@ -13,7 +13,7 @@ export default function CreatorCard({ name, bio, link, imageUrl }: CreatorCardPr
     return (
         <div className="creator-card">
             <div className="creator-image-container">
-                <img className="creator-image" src={imageUrl ?? '../assets/default.jpg'} alt={name} />
+                <img className="creator-image" src={imageUrl ?? '../public/default.jpg'} alt={name} />
             </div>
             <h2 className="creator-name">{name}</h2>
             <p className="creator-bio">{bio}</p>
