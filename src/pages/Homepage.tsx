@@ -24,6 +24,7 @@ export default function Homepage({ creators }: HomepageProps) {
           Add a Creator
         </button>
       </div>
+      <p className="homepage-subtitle">See 5 Featured Creators Below</p>
       <div className="creator-cards-container">
         {checkCreators(limitedCreators) ? (limitedCreators.map((creator: Creator) => (
           <CreatorCard
@@ -32,6 +33,7 @@ export default function Homepage({ creators }: HomepageProps) {
             bio={creator.description}
             link={creator.url}
             imageUrl={creator.image_url ?? undefined}
+            onClick={() => navigate(`/creator/${creator.id}`)}
           />
         ))) : (<p>No creators yet, add one above!</p>)}
       </div>

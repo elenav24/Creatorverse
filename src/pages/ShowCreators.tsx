@@ -19,6 +19,7 @@ export default function ShowCreators({ creators }: ShowCreatorsProps) {
               bio={creator.description}
               link={creator.url}
               imageUrl={creator.image_url ?? undefined}
+              onClick={() => window.location.href = `/creator/${creator.id}`}
             />
           ))
         ) : (

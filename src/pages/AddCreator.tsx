@@ -13,6 +13,7 @@ export default function AddCreator() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [imageUrlError, setImageUrlError] = useState('');
+    const [urlError, setUrlError] = useState('');
     const navigate = useNavigate();
 
     async function handleSubmit(e: React.FormEvent) {
@@ -36,17 +37,17 @@ export default function AddCreator() {
         if (error) {
             setError('Failed to add creator.');
         } else {
-            navigate('/');
+            navigate('/', { replace: true });
         }
     }
 
     return (
         <div className="add-creator-page">
             <div className="add-creator-form-container">
-                <span className="add-creator-title">Add a Creator</span>
+                <h2 className="add-creator-title">Add a Creator</h2>
                 <form className="add-creator-form" onSubmit={handleSubmit}>
                     <label>
-                        <span className="add-creator-label">Name</span>
+                        <p className="add-creator-label">Name</p>
                         <input
                             type="text"
                             value={name}
@@ -63,7 +64,7 @@ export default function AddCreator() {
                         </div>
                     </label>
                     <label>
-                        <span className="add-creator-label">Description</span>
+                        <p className="add-creator-label">Description</p>
                         <textarea
                             value={description}
                             onChange={e => {
@@ -79,16 +80,23 @@ export default function AddCreator() {
                         </div>
                     </label>
                     <label>
-                        <span className="add-creator-label">URL to their channel/page</span>
+                        <p className="add-creator-label">URL to their channel/page</p>
                         <input
                             type="url"
                             value={url}
-                            onChange={e => setUrl(e.target.value)}
-                            required
+                            onChange={e => {
+                                setUrl(e.target.value);
+                                if (e.target.value && !e.target.value.startsWith('https://')) {
+                                    setUrlError('URL must start with https://');
+                                } else {
+                                    setUrlError('');
+                                }
+                            }}
                         />
+                        {urlError && <div className="form-error">{urlError}</div>}
                     </label>
                     <label>
-                        <span className="add-creator-label">Image URL (optional)</span>
+                        <p className="add-creator-label">Image URL (optional)</p>
                         <input
                             type="url"
                             value={imageUrl}
