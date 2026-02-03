@@ -8,8 +8,8 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "creatorverse.elenav.me" }],
-      "destination": "https://creatorverse.elenav.me/$1",
+      "has": [{ "type": "host", "value": "elenav.me" }],
+      "destination": "https://elenav.me/$1",
       "permanent": true
     }
   ]
