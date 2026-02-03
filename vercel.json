@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!api|_next|assets|favicon.ico).*)",
+      "destination": "/"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "creatorverse.elenav.me" }],
+      "destination": "https://creatorverse.elenav.me/$1",
+      "permanent": true
+    }
+  ]
+}
